@@ -3,21 +3,22 @@ error_reporting(0);
 ?>
 <!DOCTYPE HTML>
 <html lang="zh-CN">
-	<head>
-		<title>Zxilly's Photograph</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="assets/css/main.css"/>
-        <noscript>
-            <link rel="stylesheet" href="assets/css/noscript.css"/>
-        </noscript>
-    </head>
-    <body class="is-preload">
+<head>
+    <title>Zxilly's Photograph</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <link rel="icon" href="icon.png">
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css"/>
+    </noscript>
+</head>
+<body class="is-preload">
 
-    <!-- Wrapper -->
-    <div id="wrapper">
+<!-- Wrapper -->
+<div id="wrapper">
 
-        <!-- Header -->
+    <!-- Header -->
         <header id="header">
             <h1><a href="index.php"><strong>影像</strong> by Zxilly</a></h1>
             <nav>
