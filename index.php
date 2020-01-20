@@ -38,12 +38,13 @@ error_reporting(0);
                             $photodes=$data[2];
                             echo <<<EOF
 <article class="thumb">
-<a href="images/fulls/$filename" class="image"><img src="images/thumbs/$filename" alt="" /></a>
+<a href="images/$filename" class="image"><img src="images/$filename" alt="" /></a>
 <h2>$photoname</h2>
 <p>$photodes</p>
 </article>
 EOF;
                         }
+            fclose($file);
                         ?>
         </div>
 
