@@ -8,7 +8,8 @@ fclose($file);
 $file = fopen("photo.pid", "w");
 fwrite($file, $filenum);
 fclose($file);
+
 file_put_contents('dat.csv', "$filenum.jpg,", FILE_APPEND);
 
 move_uploaded_file($_FILES["file"]["tmp_name"], "images/" . $filenum . ".jpg");
-header('Location: /admin.html');
+//header('Location: /admin.html');

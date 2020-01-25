@@ -4,43 +4,52 @@
     <script src="assets/js/mdui.min.js"></script>
     <meta charset="utf-8">
     <script>
-        var $$ = mdui.JQ;
-
         function uploadfile() {
             document.getElementById("btn_file").click();
         }
 
+        var $$ = mdui.JQ;
+
+        var url = 'recv.php';
+
+
         $$.ajaxSetup({
+            // 默认禁止触发全局 AJAX 事件
             global: false,
+
+            // 默认使用 POST 请求
             method: 'POST'
         });
 
-        function successreset() {
-            mdui.snackbar({message: '上传成功',});
-            $$('.main').val('');
-        }
-
-        function send() {
-            var photoname = $$('#idphotoname').val();
-            var photodes = $$('#idphotodes').val();
-
+        function filesend() {
             $$.ajax({
-                url: './recv.php',
-                headers: {
-                    photoname: `${photoname}`,
-                    photodes: `${photodes}`,
-                },
+                url: './file_rev.php',
                 processData: false,
                 cache: false,
                 contentType: false,
                 data: new FormData($$('#uploadForm')[0]),
-                success: successreset(),
-                error: mdui.snackbar({
-                    message: '上传出错',
-                }),
             });
-        };
+            namesend();
+        }
 
+        function namesend() {
+            var photoname = $$('#photoname').val();
+            var photoname = $$('#photodes').val();
+            console.log(photoname);
+            /*$$.ajax({
+                url: './name_rev.php',
+                data: {
+                    photoname: `${photoname}`,
+                    photodes: `${photoname}`
+                },
+                success: function () {
+                    mdui.snackbar({
+                        message: '发送成功',
+                    });
+                }
+
+            });*/
+        }
 
     </script>
 
@@ -56,15 +65,15 @@
     <div class="mdui-row">
         <div class="mdui-textfield mdui-textfield-floating-label">
             <label class="mdui-textfield-label">图片名称</label>
-            <textarea class="main mdui-textfield-input" id="idphotoname"></textarea>
+            <textarea class="mdui-textfield-input" id="photoname"></textarea>
         </div>
         <div class="mdui-textfield mdui-textfield-floating-label">
             <label class="mdui-textfield-label">图片描述</label>
-            <textarea class="main mdui-textfield-input" id="idphotodes"></textarea>
+            <textarea class="mdui-textfield-input" id="photodes"></textarea>
         </div>
     </div>
     <form enctype="multipart/form-data" id="uploadForm">
-        <input class="main" id="btn_file" name="file" style="display: none;" type="file">
+        <input id="btn_file" name="file" style="display: none;" type="file">
     </form>
     <div class="mdui-row">
         <button class="mdui-btn mdui-color-indigo-accent mdui-ripple mdui-center mdui-btn-raised" onclick="uploadfile()"
@@ -72,7 +81,7 @@
         </button>
     </div>
     <div class="mdui-row">
-        <button class="mdui-btn mdui-color-indigo-accent mdui-ripple mdui-center mdui-btn-raised" onclick="send()"
+        <button class="mdui-btn mdui-color-indigo-accent mdui-ripple mdui-center mdui-btn-raised" onclick="namesend()"
                 style="margin-top:40px">Send
         </button>
     </div>
