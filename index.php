@@ -70,7 +70,7 @@ EOF;
                         </ul>
                     </section>
                     <p class="copyright">
-                        &copy; 2017-2020 Zxilly. Opensourced as <a href="https://github.com/Zxilly/CamShow">CamShow</a>.
+                        &copy; 2017-2022 Zxilly. Opensourced as <a href="https://github.com/Zxilly/CamShow">CamShow</a>.
                     </p>
                 </div>
             </div>
